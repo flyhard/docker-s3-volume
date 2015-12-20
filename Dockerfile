@@ -1,7 +1,7 @@
-FROM ubuntu:14.04
-MAINTAINER Dave Newman <dave@assembly.com>
+FROM debian:jessie
+MAINTAINER Per Abich <per.abich@gmail.com>
 
-RUN apt-get update && apt-get install -y awscli
+RUN apt-get update && apt-get install -y python-pip && pip install awscli && apt-get clean
 ADD watch /watch
 
 VOLUME /data
